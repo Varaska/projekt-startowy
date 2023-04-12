@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zegar w przeglądarce</title>
+    <style>
+      /* Stylowanie zegara */
+      #clock {
+        font-size: 4em;
+        text-align: center;
+        margin-top: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+
+    <script>
+      // Funkcja, która aktualizuje czas co sekundę
+      function updateClock() {
+        const clock = document.getElementById("clock");
+        const now = new Date();
+
+        // Formatowanie czasu jako godziny:minuty:sekundy
+        const timeString = now.toLocaleTimeString("pl-PL");
+
+        // Aktualizacja zawartości zegara w dokumencie HTML
+        clock.textContent = timeString;
+      }
+
+      // Wywołanie funkcji updateClock co sekundę
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>
